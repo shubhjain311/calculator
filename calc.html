@@ -1,0 +1,83 @@
+
+<html>
+<head>
+    <script>
+        function additem(event){
+           if(event.keyCode === 13){
+        
+
+           
+         const list =  document.getElementById("list");
+         const item = document.createElement("li")
+         const itemsinput = document.getElementById("itemsinput");
+         if(itemsinput.value === ""){
+            alert("unvalid input");
+        }else{
+         item.innerHTML = itemsinput.value
+         list.appendChild(item);
+         itemsinput.value = ""
+
+        }
+        }
+    }
+    function addnumber(event){
+    const firstnumber = document.getElementById("firstnumber");
+    const secondnumber = document.getElementById("secondnumber")
+    const sum =  parseInt(firstnumber.value)+parseInt(secondnumber.value);
+    const output = document.getElementById("output")
+    output.innerHTML = sum;
+    }
+    function subtractnumber(event){
+    const firstnumber = document.getElementById("firstnumber");
+    const secondnumber = document.getElementById("secondnumber")
+    const diffrence =  parseInt(firstnumber.value)-parseInt(secondnumber.value);
+    const output = document.getElementById("output")
+    output.innerHTML =diffrence;
+    }
+    function multiplynumber(event){
+    const firstnumber = document.getElementById("firstnumber");
+    const secondnumber = document.getElementById("secondnumber")
+    const into =  parseInt(firstnumber.value)*parseInt(secondnumber.value);
+    const output = document.getElementById("output")
+    output.innerHTML = into;
+    }
+    function dividenumber(event){
+    const firstnumber = document.getElementById("firstnumber");
+    const secondnumber = document.getElementById("secondnumber")
+    const division =  parseInt(firstnumber.value)/parseInt(secondnumber.value);
+    const output = document.getElementById("output")
+    output.innerHTML = division;
+    }
+    </script>
+<title>Calculator</title>
+<link rel="shortcut icon" href="./1234.jpeg" type ="image/x-icon" >
+</head>
+<body bgcolor = "gold">
+    
+<h1>
+    Calculator
+</h1>
+<ul id="list">
+</ul>
+<font size = "5"></font>
+<label> First number: </label>
+<input type = "number" id ="firstnumber" onkeydown="additem(event)">
+
+<div>
+<label>Second number: </label>
+<input type = "number" id ="secondnumber" onkeydown="additem(event)">
+<div>
+    <div>
+        <label>Total: </label>
+       <span id = "output">
+    </div>
+    <button onclick="addnumber(event)">+</button>
+    <button onclick="subtractnumber(event)">-</button>
+    <button onclick="multiplynumber(event)">*</button>
+    <button onclick="dividenumber(event)">/</button>
+    
+
+</div>
+</div>
+</body>
+</html>
